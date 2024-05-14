@@ -6,6 +6,9 @@
 //int[] array = new int[5];
 using System.Runtime.CompilerServices;
 
+Console.WriteLine("Введите количество чисел в массиве: ");
+int size = Convert.ToInt32(Console.ReadLine());
+
 int[] CreateArrayRndInt(int size, int min, int max)//создадим функцию которая создает массив и возвращает 
 {
     int[] array = new int[size];
@@ -35,7 +38,7 @@ void PrintArray(int[] array)
     }
 }
 
-int[] arr = CreateArrayRndInt(10, 1, 100);
+int[] arr = CreateArrayRndInt(size, 1, 100); //можно вместо цифр прописать переменную, предварительно ее ввести как и size
 PrintArray(arr);
 
 int CountPrimeNumbers(int[] array)
