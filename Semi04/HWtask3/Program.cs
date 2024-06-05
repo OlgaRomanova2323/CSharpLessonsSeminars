@@ -1,10 +1,4 @@
-﻿// Задайте массив из N случайных целых чисел (N вводится с
-// клавиатуры).
-// Найдите количество чисел, которые оканчиваются на 1 и
-// делятся нацело на 7.
-// Пример
-// [1 5 11 21 81 4 0 91 2 3]
-// => 2
+﻿//Напишите программу, которая перевернёт одномерный массив (первый элемент станет последним, второй – предпоследним и т.д.)
 using System.Globalization;
 
 int[] CreateArrayRndInt(int size, int min, int max)//создадим функцию которая создает массив и возвращает 
@@ -35,26 +29,37 @@ void PrintArray(int[] array)
         }
     }
 }
-int CountNumsLastADevB(int[] array, int aLast, int bDev)
+int CreateFlipArray(int[] array)
 {
-    int count = 0;
-   
-    for (int i = 0; i < array.Length; i++)
+
+    int i = 0;
+    int num = 0;
+    int index = array.Length / 2;
+    int j;
+    int[] FlipArray = new int[index * 2];
+    while (i < index)
     {
-        if (array[i] % 10 == aLast && array[i] % bDev == 0)
-            count++;
-          
+        num = array[i];
+        j = array.Length - 1 - i;
+        FlipArray[i] = array[j];
+        FlipArray[j] = num;
+        i++;
+
     }
-    return count;
-   }
+    return (FlipArray);
+}
+
+
 Console.WriteLine("Задайье размер массива: ");
 int LenghtCount = Convert.ToInt32(Console.ReadLine());
 
 
 int[] arr = CreateArrayRndInt(LenghtCount, 1, 100);
+//int[] arr2= FlipArray(arr);
 PrintArray(arr);
-int result = CountNumsLastADevB(arr,1,7);
-Console.Write($" => {result}");
+//PrintArray(arr2);
+//int result = FlipArray(arr);
+//Console.Write($" => {result}");
 
 
 

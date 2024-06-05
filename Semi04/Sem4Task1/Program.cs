@@ -6,8 +6,8 @@
 //int[] array = new int[5];
 using System.Runtime.CompilerServices;
 
-Console.WriteLine("Введите количество чисел в массиве: ");
-int size = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите количество чисел в массиве: ");//эти две строик можно убрать и в вызове
+int size = Convert.ToInt32(Console.ReadLine());           // функции вместо size  указать магическое число
 
 int[] CreateArrayRndInt(int size, int min, int max)//создадим функцию которая создает массив и возвращает 
 {
